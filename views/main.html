@@ -1,0 +1,42 @@
+<style>
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+    width: 500px; 
+    height: 75px
+};
+</style>
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a ng-href="#">Home</a></li>
+    <li><a ng-href="#">About</a></li>
+    <li><a ng-href="#">Contact</a></li>
+  </ul>
+  <h3 class="text-muted">nytimes</h3>
+</div>
+<div data-ng-controller="MainCtrl" ng-app="vantageApp">
+<div ng-controller="MainCtrl" ng-model="candidateFilter">
+    <h4>Highcharts using NYT 2008 US Presidential Campaign Data</h4>
+    <div >
+      <button id="candidate" ng-click="candidateReceipts(filteredItems)">Candidate Receipts</button>
+      <button ng-click="partySpend(items)">Party Spending</button>
+        <div class="row">
+          <highchart id="chart1" config="chartConfig" series="chartConfig.series" class="span10" style="height: 600px; width: 800px; margin: 0 auto;" ></highchart>
+        </div>
+    </div>
+  </div>
+  <div>
+    <h4>The Candidates</h4>
+    <h5>(click on a name for more details)</h5>
+      <input class="form-control" type="search" ng-model="candidateFilter" placeholder="filter candidates..." />
+      <br>
+      <accordion close-others="true" ng-repeat="item in (filteredItems = (items.results | filter:candidateFilter))">
+        <accordion-group heading="{{item.candidate_name}}" ng-click="candidateSearch(item.candidate_name)" style="cursor: pointer;" >
+        <div ng-grid="gridOptions" class="gridStyle"></div>
+        </accordion-group>
+      </accordion>
+  </div>
+</div>
+
+<div class="footer">
+  <p>♥ from the Yeoman team</p>
+</div>
