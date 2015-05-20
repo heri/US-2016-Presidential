@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('vantageApp')
+angular.module('presidentApp')
   .controller('MainCtrl', function ($scope, $http, $filter, $modal) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

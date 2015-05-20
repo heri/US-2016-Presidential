@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('vantageApp', [
+angular.module('presidentApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
