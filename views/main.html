@@ -10,11 +10,11 @@
 <div ng-controller="MainCtrl" ng-model="candidateFilter">
 	<center>
     <h1>2008 US candidates spending</h1>
-	<h4>Source <a href="http://developer.nytimes.com/">NYTimes</a> 2008 US Elections API. Graphs with Highcharts API</h1>
+	<h4 class="title">Source: <a href="http://developer.nytimes.com/">NYTimes</a> 2008 US Elections API. Graphs with Highcharts API</h1>
 	</center>
     <div >
 	<center>
-      <button id="candidate" ng-click="candidateReceipts(filteredItems)">Candidate Receipts</button>
+      <button id="candidate" ng-class="{{'receipts' && 'btn-primary' || 'btn-default'}}" ng-click="candidateReceipts(filteredItems)">Candidate Receipts</button>
       <button ng-click="partySpend(items)">Party Spending</button>
   	</center>
 	  

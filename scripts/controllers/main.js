@@ -11,6 +11,9 @@ angular.module('presidentApp')
     $scope.items = [];
     $scope.chartData = [];
     $scope.chartConfig = {};
+	
+	
+	$scope.receiptsView = true;
 
     $scope.filteredItems;
 
@@ -111,6 +114,7 @@ angular.module('presidentApp')
       }
   		var totalSpend = [['Democrats',demSpend],['Republicans', repubSpend]];
       $scope.pieChartConfig('pie', totalSpend, 'Party Spend', 'US 2008 Campaign Spend by Party');
+	  $scope.receiptsView = false;
     };
 
     $scope.candidateReceipts = function (data) {
@@ -134,7 +138,7 @@ angular.module('presidentApp')
       $http.jsonp('http://api.nytimes.com/svc/elections/us/v3/finances/2008/president/candidates/' 
         + lname + '.json?query=&api-key=795366de44eab5fca0437c24982da935:14:48908840&callback=JSON_CALLBACK').success(function (data) {
         var candidateData = {};
-        // candidateData.candidate_id = data.results[0].candidate_id;
+        candidateData.candidate_id = data.results[0].candidate_id;
         candidateData.total_contributions = data.results[0].total_contributions;
         candidateData.total_receipts_party_rank = data.results[0].total_receipts_party_rank;
         $scope.candidateResult = [candidateData];
