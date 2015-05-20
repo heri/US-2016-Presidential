@@ -8,7 +8,9 @@ angular.module('presidentApp', [
   'ui.bootstrap',
   'ngGrid'
 ])
-  .config(function ($routeProvider, $locationProvider) {
+.config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
+	$locationProvider.html5Mode(false);
+	
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -18,5 +20,4 @@ angular.module('presidentApp', [
         redirectTo: '/'
       });
 	  
-	  $locationProvider.html5Mode(false);
-  });
+  }]);
