@@ -17,7 +17,7 @@ angular.module('presidentApp')
     $scope.candidateResult = [];
     $scope.candidateDefs = 
 	[
-                   { field: 'total_contributions', displayName: 'Total Contributions', width: "150" },
+                   { field: 'total_contributions', displayName: 'Total Contributions in USD', width: "150" },
                    { field: 'total_receipts_party_rank', displayName: 'Party rank (total receipts)', width: "200" }];
     $scope.gridOptions = { data: 'candidateResult', columnDefs: 'candidateDefs' };
 
