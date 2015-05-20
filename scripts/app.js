@@ -17,4 +17,6 @@ angular.module('vantageApp', [
       .otherwise({
         redirectTo: '/'
       });
+	  
+	  $locationProvider.html5Mode(false);
   });
