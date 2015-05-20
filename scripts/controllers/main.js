@@ -135,7 +135,7 @@ angular.module('presidentApp')
         + lname + '.json?query=&api-key=795366de44eab5fca0437c24982da935:14:48908840&callback=JSON_CALLBACK').success(function (data) {
         var candidateData = {};
         // candidateData.candidate_id = data.results[0].candidate_id;
-        candidateData.total_contributions = {{data.results[0].total_contributions | currency:"USD$"}}  ;
+        candidateData.total_contributions = data.results[0].total_contributions | currency:"USD$"  ;
         candidateData.total_receipts_party_rank = data.results[0].total_receipts_party_rank;
         $scope.candidateResult = [candidateData];
       });
