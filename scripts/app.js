@@ -8,7 +8,7 @@ angular.module('presidentApp', [
   'ui.bootstrap',
   'ngGrid'
 ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
