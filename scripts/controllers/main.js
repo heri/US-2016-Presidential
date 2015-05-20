@@ -43,6 +43,7 @@ angular.module('presidentApp')
           }
           if ($scope.chartConfig.series) {
             $scope.chartConfig.series[0].data = candidateData;
+            $scope.chartConfig.series[0].setTitle('Candidate Receipts total');
             $scope.chartConfig.xAxis.categories = names;
           }
         }

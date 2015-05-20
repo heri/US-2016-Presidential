@@ -6,16 +6,10 @@
 };
 </style>
 <div class="header">
-  <ul class="nav nav-pills pull-right">
-    <li class="active"><a ng-href="#">Home</a></li>
-    <li><a ng-href="#">About</a></li>
-    <li><a ng-href="#">Contact</a></li>
-  </ul>
-  <h3 class="text-muted">nytimes</h3>
 </div>
 <div data-ng-controller="MainCtrl" ng-app="presidentApp">
 <div ng-controller="MainCtrl" ng-model="candidateFilter">
-    <h4>Highcharts using NYT 2008 US Presidential Campaign Data</h4>
+    <h4>Highcharts using <a href="http://developer.nytimes.com/">NYT</a> 2008 US Presidential Campaign Data</h4>
     <div >
       <button id="candidate" ng-click="candidateReceipts(filteredItems)">Candidate Receipts</button>
       <button ng-click="partySpend(items)">Party Spending</button>
@@ -25,7 +19,7 @@
     </div>
   </div>
   <div>
-    <h4>The Candidates</h4>
+    <h4>Candidates</h4>
     <h5>(click on a name for more details)</h5>
       <input class="form-control" type="search" ng-model="candidateFilter" placeholder="filter candidates..." />
       <br>
@@ -38,5 +32,5 @@
 </div>
 
 <div class="footer">
-  <p>♥ from the Yeoman team</p>
+  <p>♥ from heri</p>
 </div>
