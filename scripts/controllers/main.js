@@ -11,9 +11,6 @@ angular.module('presidentApp')
     $scope.items = [];
     $scope.chartData = [];
     $scope.chartConfig = {};
-	
-	
-	$scope.receiptsView = true;
 
     $scope.filteredItems;
 
@@ -114,7 +111,7 @@ angular.module('presidentApp')
       }
   		var totalSpend = [['Democrats',demSpend],['Republicans', repubSpend]];
       $scope.pieChartConfig('pie', totalSpend, 'Party Spend', 'US 2008 Campaign Spend by Party');
-	  $scope.receiptsView = false;
+
     };
 
     $scope.candidateReceipts = function (data) {
