@@ -25,7 +25,7 @@ angular.module('presidentApp')
 
 
     $scope.getItems = function() {
-      $http.jsonp('http://api.nytimes.com/svc/elections/us/v3/finances/2015/president/totals.json?api-key=795366de44eab5fca0437c24982da935:14:48908840&callback=JSON_CALLBACK').success(function (data) {
+      $http.jsonp('http://api.nytimes.com/svc/elections/us/v3/finances/2016/president/totals.json?api-key=795366de44eab5fca0437c24982da935:14:48908840&callback=JSON_CALLBACK').success(function (data) {
         $scope.items = data;
       });
     };
@@ -115,7 +115,7 @@ angular.module('presidentApp')
         }
       }
   		var totalSpend = [['Democrats',demSpend],['Republicans', repubSpend]];
-      $scope.pieChartConfig('pie', totalSpend, 'Party Spend', 'US 2015 Campaign Spend by Party');
+      $scope.pieChartConfig('pie', totalSpend, 'Party Spend', 'US 2016 Campaign Spend by Party');
 	  $scope.allSpend = demSpend + repubSpend;
     };
 
@@ -132,7 +132,7 @@ angular.module('presidentApp')
 				totalSpend += receipt;
       }
 
-      $scope.barChartConfig('bar', candidateData, names, 'US 2015 Campaign Total Receipts by Candidate');
+      $scope.barChartConfig('bar', candidateData, names, 'US 2016 Campaign Total Receipts by Candidate');
 	  $scope.allSpend = totalSpend;
 
     };
@@ -144,7 +144,7 @@ angular.module('presidentApp')
 
     $scope.candidateSearch = function(name) {
       var lname = name.split(',', 1);
-      $http.jsonp('http://api.nytimes.com/svc/elections/us/v3/finances/2015/president/candidates/'
+      $http.jsonp('http://api.nytimes.com/svc/elections/us/v3/finances/2016/president/candidates/'
         + lname + '.json?query=&api-key=795366de44eab5fca0437c24982da935:14:48908840&callback=JSON_CALLBACK').success(function (data) {
 
         var candidateData = {};
@@ -158,7 +158,7 @@ angular.module('presidentApp')
 
 
 
-		$http.jsonp('http://api.nytimes.com/svc/elections/us/v3/finances/2015/candidates/'
+		$http.jsonp('http://api.nytimes.com/svc/elections/us/v3/finances/2016/candidates/'
 		+ candidateData.candidate_id + '48hour.json?query=&api-key=795366de44eab5fca0437c24982da935:14:48908840&callback=JSON_CALLBACK').success(function (data){
 
 			$scope.contributorDefs =
