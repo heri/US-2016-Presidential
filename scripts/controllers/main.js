@@ -144,7 +144,7 @@ angular.module('presidentApp')
 
     $scope.candidateSearch = function(name) {
       var lname = name.split(',', 1);
-      $http.jsonp('http://api.nytimes.com/svc/elections/us/v3/finances/2008/president/candidates/'
+      $http.jsonp('http://api.nytimes.com/svc/elections/us/v3/finances/2015/president/candidates/'
         + lname + '.json?query=&api-key=795366de44eab5fca0437c24982da935:14:48908840&callback=JSON_CALLBACK').success(function (data) {
 
         var candidateData = {};
@@ -158,7 +158,7 @@ angular.module('presidentApp')
 
 
 
-		$http.jsonp('http://api.nytimes.com/svc/elections/us/v3/finances/2008/candidates/'
+		$http.jsonp('http://api.nytimes.com/svc/elections/us/v3/finances/2015/candidates/'
 		+ candidateData.candidate_id + '48hour.json?query=&api-key=795366de44eab5fca0437c24982da935:14:48908840&callback=JSON_CALLBACK').success(function (data){
 
 			$scope.contributorDefs =
