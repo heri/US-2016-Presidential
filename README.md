@@ -1,4 +1,4 @@
-# 2016 US Presidential Elections Spending
+# 2016 US Presidential Campaign Contributions Tracking
 
 This application vizualizes the overall contributions to each candidate for the upcoming presidential elections in the USA.
 
